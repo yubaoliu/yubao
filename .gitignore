@@ -1,3 +1,9 @@
+_site
+.bundle
+.sass-cache
+Gemfile.lock
+
+#Cmake
 CMakeCache.txt
 CMakeFiles
 CMakeScripts
