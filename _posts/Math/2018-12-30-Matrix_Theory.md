@@ -1,7 +1,16 @@
 ---
 title: Matrix Theory
-author: yubaoliu89@gmail.com
 ---
+
+<!-- TOC START min:1 max:3 link:true update:true -->
+- [The Rank of a Matrix](#the-rank-of-a-matrix)
+  - [矩陣的等價標準形](#矩陣的等價標準形)
+  - [矩陣的滿秩分解](#矩陣的滿秩分解)
+- [Resources](#resources)
+
+<!-- TOC END -->
+
+
 
 # The Rank of a Matrix
 

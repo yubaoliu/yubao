@@ -2,10 +2,20 @@
 title: Geometry Computation  计算几何
 ---
 
+<!-- TOC START min:1 max:3 link:true update:true -->
+- [Area of triangle](#area-of-triangle)
+  - [Shoelace formula](#shoelace-formula)
+
+<!-- TOC END -->
+
+
 
 # Area of triangle
 ## Shoelace formula
 [Proof for a triangle -wiki](https://en.wikipedia.org/wiki/Shoelace_formula)
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Shoelace3.png/800px-Shoelace3.png){:height="402px" width="330px" align="right"}
+
 
 **Definition:**
 The formula can be represented by the expression
@@ -32,15 +42,16 @@ $$
 
 where $x_{n+1} = x_1$ and $x_0 = x_n$, as well as $y_{n+1} = y_1$ and $y_0 = y_n$
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Triangle_area_from_coordinates_JCB.jpg/732px-Triangle_area_from_coordinates_JCB.jpg)
 
 $$
 {\displaystyle \mathbf {A} ={\frac {1}{2}}{\begin{vmatrix}1&1&1\\x_{1}&x_{2}&x_{3}\\y_{1}&y_{2}&y_{3}\end{vmatrix}}}
 $$
 
-If the coordinates are written in a clockwise order, the value of the determinant will be $$-A$$
+If the coordinates are written in a clockwise order, the value of the determinant will be $-A$
 
 Rearranging another way
 $$
 {\displaystyle \mathbf {A} ={\frac {1}{2}}|x_{1}y_{2}+x_{2}y_{3}+x_{3}y_{1}-x_{2}y_{1}-x_{3}y_{2}-x_{1}y_{3}|}
 $$
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Triangle_area_from_coordinates_JCB.jpg/732px-Triangle_area_from_coordinates_JCB.jpg){:height="402px" width="330px" align="right"}

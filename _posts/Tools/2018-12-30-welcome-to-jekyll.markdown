@@ -1,6 +1,5 @@
 ---
 title:  "Welcome to Jekyll!"
-categories: tools
 ---
 
 # Install and Usage
@@ -36,9 +35,11 @@ theme: classic-jekyll-theme
 # Grammer
 ## Loop
 
+~~~
 {% for post in site.posts %}
   {{ post.title }} <br>
 {% endfor %}
+~~~
 
 ## Condition sentence
 
@@ -102,6 +103,11 @@ home.html:
   {% endif %}
 {% endfor %}
 ```
+
+# Math - Latex
+Refer
+1. [Write LaTeX Equations in Jekyll Using MathJax & Kramdown](https://lyk6756.github.io/2016/11/25/write_latex_equations.html)
+2. [http://docs.mathjax.org/en/latest/start.html#using-a-content-delivery-network-cdn](http://docs.mathjax.org/en/latest/start.html#using-a-content-delivery-network-cdn)
 
 
 >  ---

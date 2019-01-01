@@ -26,7 +26,7 @@ github_username:  yubaoliu
 
 # Build settings
 markdown: kramdown
-theme: classic-jekyll-theme
+#theme: classic-jekyll-theme
 plugins:
   - jekyll-feed
 
@@ -38,6 +38,7 @@ defaults:
     values:
       layout: "post"
       author: Liu Yubao
+      comments: true
       permalink: /:categories/:year/:month/:day/:title.html
   -
     scope:
@@ -49,6 +50,11 @@ defaults:
        path: "_posts/Tools"
      values:
        categories: Tools
+  -
+     scope:
+       path: "_posts/AI"
+     values:
+       categories: AI
 
   - scope:
       path: "images"
