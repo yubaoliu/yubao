@@ -13,22 +13,61 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Yubao's Blog
+
+# Run: bundle exec jekyll serve --watch#
+title: 刘玉宝(Liu Yubao)的博客
 email: yubaoliu89@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  This is Yubao's Blog
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username:
-github_username:  yubaoliu
+url: "https://yubaoliu.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+rss_url: /pages/feed.xml
 
 # Build settings
 markdown: kramdown
 #theme: classic-jekyll-theme
+highlighter: rouge #gem install rouge
+mathjax: enabled
+
+# Sidebar filter
+# Choose 'tag' or 'category' as filter in sidebar.
+filter: 'category'
+recent_num: 20
+
+# Social account
+twitter:  #twitter_username:
+weibo:
+github: yubaoliu #github_username:  yubaoliu
+instagram:
+linkedin: https://www.linkedin.com/in/yubao-liu-1022b7120/
+permalink: /:categories/:year/:month/:day/:title.html
+
+
+# avatar and Favicon
+avatar:
+favicon:
+
+#Plugin Setting
 plugins:
   - jekyll-feed
+  - jekyll-admin
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-toc
+
+# disqus config
+disqus:
+  shortname: https-yubaoliu-github-io
+#disqus: https-yubaoliu-github-io
+
+# google analytics config
+ga:
+  id: UA-131527698-1
+  url: yubaoliu.github.io
+
+sass:
+  style: compressed
+
 
 defaults:
   -
@@ -38,8 +77,7 @@ defaults:
     values:
       layout: "post"
       author: Liu Yubao
-      comments: true
-      permalink: /:categories/:year/:month/:day/:title.html
+#      toc: true
   -
     scope:
       path: "_posts/Math"
@@ -55,11 +93,16 @@ defaults:
        path: "_posts/AI"
      values:
        categories: AI
+  -
+     scope:
+       path: "_posts/WebDev"
+     values:
+       categories: WebDev
 
-  - scope:
-      path: "images"
-    values:
-      image: true
+#  - scope:
+#      path: "images"
+#    values:
+#      image: true
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

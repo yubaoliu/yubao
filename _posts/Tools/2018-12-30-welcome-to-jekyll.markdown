@@ -31,6 +31,7 @@ theme: classic-jekyll-theme
 ## Recommeded Themes
 1. [bohu-jekyll-theme](https://llawlight.github.io/bohu-jekyll-theme/)
 2. [classic-jekyll-theme](https://github.com/Balancingrock/classic-jekyll-theme)
+1. [suyan/suyan.github.io](https://github.com/suyan/suyan.github.io)
 
 # Grammer
 ## Loop
@@ -75,34 +76,16 @@ home.html:
 ```
 
 ## Access static_files
-```
+
 {% for file in site.static_files %}
   {{ file.path}} <br>
 {% endfor %}
-```
+
 
 - *file.basename*
 - *file.extname*
 
 
-## Access images
-_config.yml:
-```
-defaults:
-  - scope:
-      path: "images"
-    values:
-      image: true
-```
-
-home.html:
-```
-{% for file in site.static_files %}
-  {% if file.image %}
-    <img src="{{ file.path}}" alt="{{ file.name}}" height="480" width="640">
-  {% endif %}
-{% endfor %}
-```
 
 # Math - Latex
 Refer
@@ -110,8 +93,10 @@ Refer
 2. [http://docs.mathjax.org/en/latest/start.html#using-a-content-delivery-network-cdn](http://docs.mathjax.org/en/latest/start.html#using-a-content-delivery-network-cdn)
 
 
->  ---
+<hr>
+
 # Original Example
+
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
