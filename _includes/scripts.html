@@ -16,16 +16,15 @@
 {% endif %}
 
 
-<!-- Mathjax Support -->
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-                    tex2jax: {
-                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                    displayMath: [ ['$$','$$'], ["\[","\]"] ]
-                    }});
-    MathJax.Hub.Queue(["Typeset",MathJax.Hub]); //如果页面重载可调用本行代码重新渲染数学公式
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
   </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+                      tex2jax: {
+                      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                      displayMath: [ ['$$','$$'], ["\[","\]"] ]
+                      }});
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub]); //如果页面重载可调用本行代码重新渲染数学公式
+    </script>
