@@ -57,7 +57,9 @@ plugins:
 # disqus config
 disqus:
   shortname: https-yubaoliu-github-io
-  comments: true
+  page_path: https://yubaoliu.github.io
+  page_title: yubao-blog
+comments: true
 #disqus: https-yubaoliu-github-io
 
 # google analytics config
@@ -99,10 +101,10 @@ defaults:
      values:
        categories: WebDev
 
-#  - scope:
-#      path: "images"
-#    values:
-#      image: true
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
