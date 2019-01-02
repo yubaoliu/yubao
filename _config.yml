@@ -27,7 +27,6 @@ rss_url: /pages/feed.xml
 markdown: kramdown
 #theme: classic-jekyll-theme
 highlighter: rouge #gem install rouge
-mathjax: enabled
 
 # Sidebar filter
 # Choose 'tag' or 'category' as filter in sidebar.
@@ -99,10 +98,10 @@ defaults:
      values:
        categories: WebDev
 
-#  - scope:
-#      path: "images"
-#    values:
-#      image: true
+  - scope:
+      path: "images"
+    values:
+      image: true
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
