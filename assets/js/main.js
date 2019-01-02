@@ -48,6 +48,12 @@ $(function() {
 
     // discus comment.
     {% if site.disqus.shortname %}
+
+      var disqus_config = function(){
+        this.page.url = 'https://yubaoliu.github.io{{ page.url }}';
+        this.page.identifier = 'https://yubaoliu.github.io{{ page.url }}';
+      };
+
       var ds_loaded = false;
       window.disqus_shortname = "{{ site.disqus.shortname }}";
       main.scroll(function(){
@@ -56,14 +62,17 @@ $(function() {
         if(!ds_loaded && nScrollTop + main.height() >= nScrollHight - 100) {
           $.ajax({
             type: 'GET',
-            url: 'http://' + disqus_shortname + '.disqus.com/embed.js',
+            url: 'https://' + disqus_shortname + '.disqus.com/embed.js',
             dataType: 'script',
             cache: true
           });
           ds_loaded = true;
         }
       });
+
     {% endif %}
+
+
     // your scripts
     if (typeof MathJax != "undefined") {
       MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('post container')]);
