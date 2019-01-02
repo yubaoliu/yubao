@@ -12,7 +12,7 @@ date: "2019-01-02 09:53"
 
 \[a -b = c\]
 
-1. single dolar
+1. single dolar $12-2=10$
 
 $ w-1 = c$
 
