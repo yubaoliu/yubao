@@ -43,8 +43,8 @@ permalink: /:categories/:year/:month/:day/:title.html
 
 
 # avatar and Favicon
-avatar:
-favicon:
+avatar: /assets/img/avatar.png
+favicon: /assets/img/qrcode.jpg
 
 #Plugin Setting
 plugins:
@@ -98,10 +98,10 @@ defaults:
      values:
        categories: WebDev
 
-  - scope:
-      path: "images"
-    values:
-      image: true
+#  - scope:
+#      path: "images"
+#    values:
+#      image: true
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

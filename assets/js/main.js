@@ -66,7 +66,7 @@ $(function() {
     {% endif %}
     // your scripts
     if (typeof MathJax != "undefined") {
-      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('post container')]);
     }
   };
   afterPjax();
