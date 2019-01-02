@@ -45,7 +45,7 @@ $(function() {
       var target = $(this.hash);
       main.animate({scrollTop: target.offset().top + main.scrollTop() - 70}, 500);
     });
-    
+
     // discus comment.
     {% if site.disqus.shortname %}
       var ds_loaded = false;
@@ -65,7 +65,9 @@ $(function() {
       });
     {% endif %}
     // your scripts
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    if (typeof MathJax != "undefined") {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
   };
   afterPjax();
 
