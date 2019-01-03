@@ -25,6 +25,19 @@ rss_url: /pages/feed.xml
 
 # Build settings
 markdown: kramdown
+kramdown:
+    input: GFM #启用 Github 扩展的 Markdown 语法
+    extensions:
+      - autolink
+      - footnotes
+      - smart
+    auto_ids: true
+    footnote_nr: 1
+    entity_output: as_char
+    toc_levels: 1..4
+    smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+
 #theme: classic-jekyll-theme
 highlighter: rouge #gem install rouge
 
@@ -53,6 +66,11 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-toc
+  - jekyll-figure
+
+
+jekyll-figure:
+  paragraphs: false
 
 # disqus config
 disqus:
@@ -111,6 +129,8 @@ defaults:
       path: "assets/img"
     values:
       image: true
+
+
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

@@ -1,23 +1,18 @@
-
-body
+.post
   {
     counter-reset: h1counter;
   }
-.post-title{
-  counter-reset: h1counter;
-  counter-reset: h2counter;
-  counter-reset: h3counter;
-}
 
-.post h1 {
+.post h1{
   counter-reset: h2counter;
 }
-.post h2 {
+.post h2{
   counter-reset: h3counter;
 }
 .post h1:not(.post-title):before {
   counter-increment: h1counter;
-  content: counter(h1counter)  ".\0000a0\0000a0";
+  content: counter(h1counter)
+      ".\0000a0\0000a0";
 }
 .post h2:before {
   counter-increment: h2counter;
@@ -33,10 +28,19 @@ body
           ".\0000a0\0000a0";
 }
 
-
-.post .img-medium{
+.post .image-center{
   width: 320px;
   height: 240px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.post .image-caption {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
 }
 
 /*link*/

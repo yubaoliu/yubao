@@ -69,18 +69,20 @@ _data/people.yml:
 ```
 
 home.html:
+
 ```
-{% for person in site.data.people %}
-  {{ person.name }}, {{ person.occupation }}
-{% endfor %}
+\{\% for person in site.data.people %}
+  \{\{ person.name }}, {{ person.occupation }}
+\{\% endfor %}
 ```
 
 ## Access static_files
 
-{% for file in site.static_files %}
-  {{ file.path}} <br>
-{% endfor %}
-
+```
+\{\% for file in site.static_files %}
+  \{\{ file.path}} <br>
+\{\% endfor %}
+```
 
 - *file.basename*
 - *file.extname*
@@ -91,6 +93,34 @@ home.html:
 Refer
 1. [Write LaTeX Equations in Jekyll Using MathJax & Kramdown](https://lyk6756.github.io/2016/11/25/write_latex_equations.html)
 2. [http://docs.mathjax.org/en/latest/start.html#using-a-content-delivery-network-cdn](http://docs.mathjax.org/en/latest/start.html#using-a-content-delivery-network-cdn)
+
+
+# Images
+
+*image.html*:
+
+```html
+<img src="{{ include.file }}" alt="{{ include.description }}">
+<span class="caption">{{ include.description }}</span>
+```
+
+Including the file:
+
+```sh
+---
+layout: post
+title: Image Caption Example
+---
+
+\{\% include image.html file="img.jpg" description="Triangle_area_from_coordinates" \%\}
+```
+
+
+{% include image.html file="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Triangle_area_from_coordinates_JCB.jpg/732px-Triangle_area_from_coordinates_JCB.jpg" description="This is an image." height="240" weight="320" %}
+
+
+## Reference
+- [How to Create Image Captions with Jekyll](https://www.kevinmcgillivray.net/captions-for-images-with-jekyll/)
 
 
 <hr>
