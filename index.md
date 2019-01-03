@@ -6,3 +6,6 @@ layout: post
 
 
 I'm researching on Intelligent Robotics and Semantic SLAM
+
+
+{% youtube WWB01IuMvzA %}

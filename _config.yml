@@ -81,6 +81,11 @@ defaults:
       author: Liu Yubao
 #      toc: true
   -
+     scope:
+       path: "_posts/AI"
+     values:
+       categories: AI
+  -
     scope:
       path: "_posts/Math"
     values:
@@ -90,18 +95,19 @@ defaults:
        path: "_posts/Tools"
      values:
        categories: Tools
-  -
-     scope:
-       path: "_posts/AI"
-     values:
-       categories: AI
+
   -
      scope:
        path: "_posts/WebDev"
      values:
        categories: WebDev
-
-  - scope:
+  -
+     scope:
+       path: "_posts/Resources"
+     values:
+       categories: Resources
+  -
+    scope:
       path: "assets/img"
     values:
       image: true
