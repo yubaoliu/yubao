@@ -24,7 +24,17 @@ url: "https://yubaoliu.github.io" # the base hostname & protocol for your site, 
 rss_url: /pages/feed.xml
 
 # Build settings
-markdown: kramdown
+markdown: Pandoc
+pandoc:
+  extensions:
+    - normalize
+    - smart
+    - csl: _styles/ieee.cls
+    - filter pandoc-eqnos
+    - filter pandoc-fignos
+
+
+#markdown: kramdown
 kramdown:
     input: GFM #启用 Github 扩展的 Markdown 语法
     extensions:
@@ -36,7 +46,6 @@ kramdown:
     entity_output: as_char
     toc_levels: 1..4
     smart_quotes: lsquo,rsquo,ldquo,rdquo
-
 
 #theme: classic-jekyll-theme
 highlighter: rouge #gem install rouge
@@ -67,6 +76,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-toc
   - jekyll-figure
+  - jekyll-pandoc
 
 
 jekyll-figure:
