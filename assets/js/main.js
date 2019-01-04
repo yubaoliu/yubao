@@ -19,10 +19,10 @@ $(function() {
     // generate toc
     var toc = $('#post-toc-ul');
     // Empty TOC and generate an entry for h1
-    toc.empty().append('<li class="post-toc-li post-toc-h1"><a href="#post-title" class="js-anchor-link">' + $('#post-title').text() + '</a></li>');
-
+  //  toc.empty().append('<li class="post-toc-li post-toc-h1"><a href="#post-title" class="js-anchor-link">' + $('#post-title').text() + '</a></li>');
+    toc.empty()
     // Generate entries for h2 and h3
-    $('.post').children('h2,h3').each(function() {
+    $('.post').children('h1,h2,h3').each(function() {
       // Generate random ID for each heading
       $(this).attr('id', function() {
         var ID = "", alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -32,11 +32,17 @@ $(function() {
         }
         return ID;
       });
-      if ($(this).prop("tagName") == 'H2') {
-        toc.append('<li class="post-toc-li post-toc-h2"><a href="#' + $(this).attr('id') + '" class="js-anchor-link">' + $(this).text() + '</a></li>');
-      } else {
-        toc.append('<li class="post-toc-li post-toc-h3"><a href="#' + $(this).attr('id') + '" class="js-anchor-link">' + $(this).text() + '</a></li>');
+
+      if ($(this).prop("tagName") == 'H1') {
+          toc.append('<li class="post-toc-li post-toc-h1"><a href="#' + $(this).attr('id') + '" class="js-anchor-link">' + $(this).text() + '</a></li>');
       }
+      else {
+          if ($(this).prop("tagName") == 'H2') {
+            toc.append('<li class="post-toc-li post-toc-h2"><a href="#' + $(this).attr('id') + '" class="js-anchor-link">' + $(this).text() + '</a></li>');
+          } else {
+            toc.append('<li class="post-toc-li post-toc-h3"><a href="#' + $(this).attr('id') + '" class="js-anchor-link">' + $(this).text() + '</a></li>');
+          }//h3
+        }//h1
     });
 
     // Smooth scrolling
@@ -47,6 +53,12 @@ $(function() {
 
     // discus comment.
     {% if site.disqus.shortname %}
+
+      var disqus_config = function(){
+        this.page.url = 'https://yubaoliu.github.io{{ page.url }}';
+        this.page.identifier = 'https://yubaoliu.github.io{{ page.url }}';
+      };
+
       var ds_loaded = false;
       window.disqus_shortname = "{{ site.disqus.shortname }}";
       main.scroll(function(){
@@ -55,15 +67,21 @@ $(function() {
         if(!ds_loaded && nScrollTop + main.height() >= nScrollHight - 100) {
           $.ajax({
             type: 'GET',
-            url: 'http://' + disqus_shortname + '.disqus.com/embed.js',
+            url: 'https://' + disqus_shortname + '.disqus.com/embed.js',
             dataType: 'script',
             cache: true
           });
           ds_loaded = true;
         }
       });
+
     {% endif %}
+
+
     // your scripts
+    if (typeof MathJax != "undefined") {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('post container')]);
+    }
   };
   afterPjax();
 

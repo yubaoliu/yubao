@@ -11,6 +11,7 @@ title: "Web Development Notes"
 
 **How to install plugins:**
 E.g.:
+
 ```sh
 cd ~/.atom/packages
 git clone https://github.com/emmetio/emmet-atom

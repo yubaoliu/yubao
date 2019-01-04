@@ -16,6 +16,8 @@ gem "jekyll-admin"
 gem "jekyll-seo-tag"
 gem 'jekyll-toc'
 gem "jekyll-sitemap"
+gem 'jekyll-figure'
+
 
 #gem "bohu-jekyll-theme"
 

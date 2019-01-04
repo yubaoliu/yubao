@@ -7,7 +7,4 @@ layout: post
 
 I'm researching on Intelligent Robotics and Semantic SLAM
 
-
-# About this Blog
-1. 如果数学公式不能正常显示，请重新刷新网页
-2. TOC目前没有显示
+<iframe width="511" height="383" src="https://www.youtube.com/embed/WWB01IuMvzA?list=RDaPe5LvFDWZk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

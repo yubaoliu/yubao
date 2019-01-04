@@ -25,6 +25,19 @@ rss_url: /pages/feed.xml
 
 # Build settings
 markdown: kramdown
+kramdown:
+    input: GFM #启用 Github 扩展的 Markdown 语法
+    extensions:
+      - autolink
+      - footnotes
+      - smart
+    auto_ids: true
+    footnote_nr: 1
+    entity_output: as_char
+    toc_levels: 1..4
+    smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+
 #theme: classic-jekyll-theme
 highlighter: rouge #gem install rouge
 
@@ -43,8 +56,8 @@ permalink: /:categories/:year/:month/:day/:title.html
 
 
 # avatar and Favicon
-avatar:
-favicon:
+avatar: /assets/img/avatar.png
+favicon: /assets/img/qrcode.jpg
 
 #Plugin Setting
 plugins:
@@ -53,10 +66,18 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-toc
+  - jekyll-figure
+
+
+jekyll-figure:
+  paragraphs: false
 
 # disqus config
 disqus:
   shortname: https-yubaoliu-github-io
+  page_path: https://yubaoliu.github.io
+  page_title: yubao-blog
+comments: true
 #disqus: https-yubaoliu-github-io
 
 # google analytics config
@@ -78,6 +99,11 @@ defaults:
       author: Liu Yubao
 #      toc: true
   -
+     scope:
+       path: "_posts/AI"
+     values:
+       categories: AI
+  -
     scope:
       path: "_posts/Math"
     values:
@@ -87,21 +113,24 @@ defaults:
        path: "_posts/Tools"
      values:
        categories: Tools
-  -
-     scope:
-       path: "_posts/AI"
-     values:
-       categories: AI
+
   -
      scope:
        path: "_posts/WebDev"
      values:
        categories: WebDev
-
-  - scope:
-      path: "images"
+  -
+     scope:
+       path: "_posts/Resources"
+     values:
+       categories: Resources
+  -
+    scope:
+      path: "assets/img"
     values:
       image: true
+
+
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
