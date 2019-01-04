@@ -6,6 +6,24 @@ title: Study Resources List
 # Tutorial
 
 - [runoob](http://www.runoob.com/)
+- [csie.ntnu.edu.tw/~u91029](http://www.csie.ntnu.edu.tw/~u91029/index.html)
+    - Algorithm
+    - Data Structure
+    - Graph theory
+    - Combinatorial Optimization
+    - Stringology
+    - Coding Theory
+    - Number Theory
+    - Analytic Number Theory
+    - Numerical Analysis
+    - Signal Processing
+    - Computational Geometry
+    - Computational Geometry
+    - Multimedia
+    - Interdisciplinarity
+
+# Algorithm
+- [acm-hdu-listproblem](http://acm.hdu.edu.cn/listproblem.php?vol=1)
 
 # Web Development
 - [初学者指南-HTML教程-介绍](https://tutorialehtml.com/zh/beginners-guide-to-html)
@@ -17,14 +35,6 @@ title: Study Resources List
 - [MathJax-Mamscd](http://www.jmilne.org/not/Mamscd.pdf)
 - [mathjax-doc-Github](http://docs.mathjax.org/en/latest/index.html#)
 
-# Markdown
-- [Boilerplating Pandoc for Academic Writing](https://www.soimort.org/notes/161117/)
-- [kramdown Syntax](https://kramdown.gettalong.org/syntax.html)
-- [Kramdown 语法文档翻译-github](http://pikipity.github.io/blog/kramdown-syntax-chinese-1.html)
-[git blog](https://github.com/pikipity/pikipity.github.com)
-- [scholarlymarkdown](http://scholarlymarkdown.com/)
-    - This project is very old,  in 2015, not update now
-    - I try to install on Ubuntu 16.04, but failed (2019-01-04)
 
 # Atom
 ## how to Sync Settings
