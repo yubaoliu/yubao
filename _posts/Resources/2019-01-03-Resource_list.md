@@ -21,3 +21,17 @@ title: Study Resources List
 - [kramdown Syntax](https://kramdown.gettalong.org/syntax.html)
 - [Kramdown 语法文档翻译-github](http://pikipity.github.io/blog/kramdown-syntax-chinese-1.html)
 [git blog](https://github.com/pikipity/pikipity.github.com)
+- [scholarlymarkdown](http://scholarlymarkdown.com/)
+    - This project is very old,  in 2015, not update now
+    - I try to install on Ubuntu 16.04, but failed (2019-01-04)
+
+# Atom
+## how to Sync Settings
+[sync-settings](https://atom.io/packages/sync-settings)
+
+# Cloud Server
+- [imgur](https://yubaoliu.imgur.com)
+    + login with Google Account
+    + Support: images
+- [sm.ms](https://sm.ms/)
+  no login

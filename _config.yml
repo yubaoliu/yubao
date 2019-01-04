@@ -24,17 +24,19 @@ url: "https://yubaoliu.github.io" # the base hostname & protocol for your site, 
 rss_url: /pages/feed.xml
 
 # Build settings
-markdown: Pandoc
-pandoc:
-  extensions:
-    - normalize
-    - smart
-    - csl: _styles/ieee.cls
-    - filter pandoc-eqnos
-    - filter pandoc-fignos
 
+#markdown: Pandoc  # no longer supported by GitHub Pages
+#pandoc:
+#  extensions:
+#    - normalize
+#    - smart
+#    - csl: _styles/ieee.cls
+#    - filter pandoc-eqnos
+#    - filter pandoc-fignos
 
-#markdown: kramdown
+#GitHub Pages only supports kramdown as a Markdown processor
+markdown: kramdown
+# Refer https://kramdown.gettalong.org to config
 kramdown:
     input: GFM #启用 Github 扩展的 Markdown 语法
     extensions:
@@ -46,6 +48,11 @@ kramdown:
     entity_output: as_char
     toc_levels: 1..4
     smart_quotes: lsquo,rsquo,ldquo,rdquo
+    coderay_line_numbers: table
+    coderay_tab_width: 4
+    line_width: 80
+    latex_headers: section,subsection,subsubsection,paragraph,subparagraph,subparagraph
+
 
 #theme: classic-jekyll-theme
 highlighter: rouge #gem install rouge
@@ -65,8 +72,8 @@ permalink: /:categories/:year/:month/:day/:title.html
 
 
 # avatar and Favicon
-avatar: /assets/img/avatar.png
-favicon: /assets/img/qrcode.jpg
+avatar: /assets/images/avatar.png
+favicon: /assets/images/qrcode.jpg
 
 #Plugin Setting
 plugins:
@@ -76,7 +83,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-toc
   - jekyll-figure
-  - jekyll-pandoc
 
 
 jekyll-figure:
@@ -134,11 +140,11 @@ defaults:
        path: "_posts/Resources"
      values:
        categories: Resources
-  -
-    scope:
-      path: "assets/img"
-    values:
-      image: true
+#  -
+#    scope:
+#      path: "assets/img"
+#    values:
+#      image: true
 
 
 

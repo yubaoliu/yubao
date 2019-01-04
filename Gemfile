@@ -17,7 +17,7 @@ gem "jekyll-seo-tag"
 gem 'jekyll-toc'
 gem "jekyll-sitemap"
 gem 'jekyll-figure'
-gem "jekyll-pandoc"
+#gem "jekyll-pandoc"  # no longer supported by GitHub Pages
 
 
 #gem "bohu-jekyll-theme"

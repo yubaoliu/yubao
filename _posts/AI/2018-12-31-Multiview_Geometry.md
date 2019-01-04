@@ -5,11 +5,11 @@
 
 # Camera
 ## Pinhole Camera Models
-![Pinhole Camera Model](/images/pinhole-camera-model.png){:class="img-responsive" align="center" }[^YangLiang]
+![Pinhole Camera Model](/assets/images/pinhole-camera-model.png){:class="img-responsive" align="center" }[^YangLiang]
 
 <br>
 
-![Perceptive Projection](/images/perceptive-projection.png){:class="img-responsive" align="center" }[^YangLiang]
+![Perceptive Projection](/assets/images/perceptive-projection.png){:class="img-responsive" align="center" }[^YangLiang]
 
 
 
