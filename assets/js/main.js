@@ -9,7 +9,6 @@ $(function() {
       menu    = $('#menu'),
       posttoc = $('#post-toc-menu'),
       x1, y1;
-
   // run this function after pjax load.
   var afterPjax = function() {
     // open links in new tab.
@@ -45,7 +44,7 @@ $(function() {
       var target = $(this.hash);
       main.animate({scrollTop: target.offset().top + main.scrollTop() - 70}, 500);
     });
-    
+
     // discus comment.
     {% if site.disqus.shortname %}
       var ds_loaded = false;
