@@ -18,6 +18,7 @@ title: Study Resources List
 - [mathjax-doc-Github](http://docs.mathjax.org/en/latest/index.html#)
 
 # Markdown
+- [Boilerplating Pandoc for Academic Writing](https://www.soimort.org/notes/161117/)
 - [kramdown Syntax](https://kramdown.gettalong.org/syntax.html)
 - [Kramdown 语法文档翻译-github](http://pikipity.github.io/blog/kramdown-syntax-chinese-1.html)
 [git blog](https://github.com/pikipity/pikipity.github.com)
