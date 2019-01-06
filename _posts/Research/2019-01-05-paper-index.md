@@ -2,6 +2,8 @@
 title: "Paper Index"
 subtitle: "Intelligent Robotics"
 date: "2019-01-05 08:22"
+csl: ../../assets/pandoc/ieee.cls
+bibliography: ../../assets/bibliography/bibliography.bib
 ---
 
 # Classified Papers

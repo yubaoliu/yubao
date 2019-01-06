@@ -1,0 +1,18 @@
+---
+geometry: margin=1.5in
+indent: true
+fontsize: 10pt
+biblio-style: resources/plos2009
+natbib-options:
+    - numbers
+    - sort&compress
+
+csl: ../pandoc/ieee.cls
+bibliography: ../bibliography/bibliography.bib
+toc: true
+toc_depth: 3
+fignos-star-name: "*"
+fignos-capitalise: true
+tablenos-cleveref: True
+tablenos-plus-name: Tab.
+---

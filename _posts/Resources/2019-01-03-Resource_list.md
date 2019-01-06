@@ -47,6 +47,7 @@ title: Study Resources List
 - [markdown-preview-enhanced/#/pandoc?id=front-matter](https://shd101wyy.github.io/markdown-preview-enhanced/#/pandoc?id=front-matter)
 - [Boilerplating Pandoc for Academic Writing](https://www.soimort.org/notes/161117/)
 - [Pandoc User’s Guid](https://pandoc.org/MANUAL.pdf)
+- [User contributed templates](https://github.com/jgm/pandoc/wiki/User-contributed-templates)
 
 # Atom
 ## how to Sync Settings

@@ -1,15 +1,10 @@
 ---
 title: Matrix Theory
+header-includes:
+  - \numberwithin{figure}{section}
+  - \numberwithin{equation}{section}
+  - \numberwithin{table}{section}
 ---
-
-<!-- TOC START min:1 max:3 link:true update:true -->
-- [The Rank of a Matrix](#the-rank-of-a-matrix)
-  - [矩陣的等價標準形](#矩陣的等價標準形)
-  - [矩陣的滿秩分解](#矩陣的滿秩分解)
-- [Resources](#resources)
-
-<!-- TOC END -->
-
 
 
 # The Rank of a Matrix
@@ -29,13 +24,16 @@ $$
 r(AB) \leq r(B) \\
 B = A^{-1}*AB \\
 r(B) = r(A^{-1}*AB) \leq r(AB)
-$$
+$${#eq:id1}
+
+see @eq:id1
 
 **Solution 2:**
 A 可逆，则其可以寫成初等矩陣的乘積:
 $$
 AB = (A_1 A_2  ... A_s)B
-$$
+$${#eq:id2}
+
 Fact: 左乘初等矩陣相當於進行一次行變換,初等行變換不改變矩陣的秩。
 
 1. **Proof**: 若A是n階冪等矩陣，證明:$r(A)+r(I-A) = n$
@@ -44,7 +42,7 @@ Fact: 左乘初等矩陣相當於進行一次行變換,初等行變換不改變�
 $$
 r(A)+r(I-A) \geq r(A+I-A) = R(I) = n \\
 r(A(I-A)) = r(A-A^2) = r(A-A) = 0 \\
-$$
+$${#eq:id3}
 
 Fact: $r(AB) \geq r(A) + r(B) -n$
 
@@ -58,13 +56,13 @@ Therefor: $n  \geq r(A) + r(B)$
 I & 0 \\
 0 & 0 \\
  \end{bmatrix}
- $$等價。
+ $${#eq:id4} 等價。
 
 1. sxn矩陣A,B等價
 $$
   \Leftrightarrow r(A) = r(B) \\
   \Leftrightarrow 存在可逆矩陣P,Q使得 B=PAQ
-$$
+$${#eq:id5}
 
 ## 矩陣的滿秩分解
 1. 假設存在$r(A_{sn}) = r$, 證明存在$B_{sr},$C_{rn}$, Let $A = BC$

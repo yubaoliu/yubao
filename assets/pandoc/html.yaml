@@ -1,0 +1,8 @@
+---
+csl:  ../assets/pandoc/ieee.cls
+css: ../assets/css/scholmd-heuristically-latest.min.css
+bibliography: /assets/bibliography/bibliography.bib
+xnos-number-sections: True #Equation Numbers by Section
+toc: true
+toc_depth: 3
+...
