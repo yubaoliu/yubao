@@ -132,14 +132,27 @@ defaults:
 
   -
      scope:
-       path: "_posts/WebDev"
+       path: "_posts/Development"
      values:
-       categories: WebDev
+       categories: Development
   -
      scope:
        path: "_posts/Resources"
      values:
        categories: Resources
+
+  -
+     scope:
+       path: "_posts/mylife"
+     values:
+       categories: mylife
+
+  -
+    scope:
+       path: "_posts/Research"
+     values:
+       categories: Research
+
 #  -
 #    scope:
 #      path: "assets/img"

@@ -8,10 +8,9 @@ date: "2019-01-04 20:45"
 
 **wiki**: In the mathematical field of graph theory, a bipartite graph (or bigraph) is a graph whose vertices can be divided into two disjoint and independent sets $U$ and $V$ such that every edge connects a vertex in $U$ to one in $V$.
 
-![wiki-Example of a bipartite graph without cycles](/assets/images/wiki-example-of-a-bipartite-graph-without-cycles.png){#fig:id}
+![wiki-Example of a bipartite graph without cycles](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Simple-bipartite-graph.svg/220px-Simple-bipartite-graph.svg.png){#fig:id}
 
-
-![Example of Bipartite Graph](/assets/images/example-of-bipartite-graph.png){#fig:id}
+![example-of-bipartite-graph](https://i.imgur.com/1ypOGaq.png){#fig:id}
 
 
 > 「二分圖」。可以分成兩群點，兩群點之間有邊，兩群點內部無邊。

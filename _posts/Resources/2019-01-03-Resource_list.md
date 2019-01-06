@@ -21,6 +21,14 @@ title: Study Resources List
     - Computational Geometry
     - Multimedia
     - Interdisciplinarity
+- [CSE 542. Advanced Data Structures and Algorithms](https://www.arl.wustl.edu/~jst/cse/542/)
+-
+
+# blog
+- [Yiyi's Blog](https://shd101wyy.github.io/)
+    - AWA, game
+    - Github blog
+
 
 # Algorithm
 - [acm-hdu-listproblem](http://acm.hdu.edu.cn/listproblem.php?vol=1)
@@ -35,6 +43,10 @@ title: Study Resources List
 - [MathJax-Mamscd](http://www.jmilne.org/not/Mamscd.pdf)
 - [mathjax-doc-Github](http://docs.mathjax.org/en/latest/index.html#)
 
+# Pandoc
+- [markdown-preview-enhanced/#/pandoc?id=front-matter](https://shd101wyy.github.io/markdown-preview-enhanced/#/pandoc?id=front-matter)
+- [Boilerplating Pandoc for Academic Writing](https://www.soimort.org/notes/161117/)
+- [Pandoc User’s Guid](https://pandoc.org/MANUAL.pdf)
 
 # Atom
 ## how to Sync Settings
@@ -46,3 +58,6 @@ title: Study Resources List
     + Support: images
 - [sm.ms](https://sm.ms/)
   no login
+
+# Marp
+- [Custom Themes with Marp](https://www.ansiblejunky.com/blog/custom-themes-with-marp/)
