@@ -22,7 +22,20 @@ title: Study Resources List
     - Multimedia
     - Interdisciplinarity
 - [CSE 542. Advanced Data Structures and Algorithms](https://www.arl.wustl.edu/~jst/cse/542/)
--
+
+
+# AI
+- [apachecn/AiLearning](https://github.com/apachecn/AiLearning)
+  [ApacheCN 中文开源组织](http://www.apachecn.org/)
+- [RedstoneWill/MachineLearningInAction](https://github.com/RedstoneWill/MachineLearningInAction)
+- 
+
+
+# Multiview Geometry & Computer Vision & Graphics
+
+- [The Geometry of Perspective Projection](https://www.cse.unr.edu/~bebis/CS791E/Notes/PerspectiveProjection.pdf)
+
+
 
 # blog
 - [Yiyi's Blog](https://shd101wyy.github.io/)

@@ -16,7 +16,8 @@ This list is just a task list for recording studying process. To record what I s
 - [ ] build a custom theme for Marp
     - [refer](https://www.ansiblejunky.com/blog/custom-themes-with-marp/)
 - [ ] Report for Image processing
-- [ ] Report for Complex Systems and Intelligent Informatics - Chap 3
+- [x] Report for Complex Systems and Intelligent Informatics - Chap 3
+    - Complet: 2018-01-09
 - [ ] Report for Complex Systems and Intelligent Informatics - Chap 4
 - [ ] remarkjs
 - [ ] review CSS
