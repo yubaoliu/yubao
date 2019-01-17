@@ -154,7 +154,12 @@ defaults:
        path: "_posts/Research"
      values:
        categories: Research
-
+  -
+    scope:
+      path: "_posts/ForeignLanguage"
+    values:
+      categories: ForeignLanguage
+      
 #  -
 #    scope:
 #      path: "assets/img"
