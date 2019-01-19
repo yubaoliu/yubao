@@ -18,7 +18,7 @@ A circle centered at $Z_0$ with radius $R_0$
 ![Triangle inequality](https://i.loli.net/2019/01/15/5c3d3a47f1331.png){#fig:}
 
 
-$$\left | Z_{0} +Z_{1} +... + Z_{n} \right |  \leq |Z_{0}| + |Z_{1}|+ ...+|Z_{n}|$${#eq:}
+$$ \mid  Z_{0} +Z_{1} +... + Z_{n}  \mid   \leq \mid Z_{0} \mid  + \mid Z_{1} \mid + ...+\mid Z_{n}\mid $${#eq:}
 
 ## Conjugated
 
@@ -28,13 +28,13 @@ $$\left | Z_{0} +Z_{1} +... + Z_{n} \right |  \leq |Z_{0}| + |Z_{1}|+ ...+|Z_{n}
 
 $$\overline{Z_1/Z_2}=\overline{Z_1}/\overline{Z_2}$${#eq:id}
 
-$$ Z_1*\overline{ Z_2} = (x+iy)(x-iy) = x^2 + y^2 = |Z|^2 $${#eq:id}
+$$ Z_1*\overline{ Z_2} = (x+iy)(x-iy) = x^2 + y^2 = \mid Z\mid ^2 $${#eq:id}
 
 ## Properties
 
-$$|Z_1 Z_2| = |Z_1|*|Z_2| $${#eq:}
+$$\mid Z_1 Z_2 \mid = \mid Z_1 \mid * \mid Z_2 \mid$${#eq:}
 
-$$|Z_1/Z_2| = |Z_1|/|Z_2| $${#eq:}
+$$\mid Z_1/Z_2 \mid = \mid Z_1 \mid /\mid Z_2\mid $${#eq:}
 
 $$Re Z = (Z+\overline{Z})/2$${#eq:}
 
