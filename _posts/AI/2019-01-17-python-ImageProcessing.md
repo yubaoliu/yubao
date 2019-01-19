@@ -108,11 +108,11 @@ Result:
 ## Image Shift
 
 ### API
-- [1, 0, 100], [0, 1, 100]]) # Row: 2, column: 3
-- => A: 2 * 2 and B: 2 * 1
-- A: [ [1, 0], [0, 1] ]
-- B: [[100], [200]]
-- input: matrix C  (xy)
+- $[1, 0, 100], [0, 1, 100]])$ # Row: 2, column: 3
+- => $A: 2 * 2 and B: 2 * 1$
+- A: $[ [1, 0], [0, 1] ]$
+- B: $[[100], [200]]$
+- input: $matrix C  (xy)$
 - ->
 $$ A * C + B =   [[1 * x + 0*y ], [0 * x + 1 * y ]] + [[100], [200]]
 \\
@@ -237,6 +237,496 @@ cv2.waitKey(0)
 Result:
 
 ![Affine TransForm Result](https://i.imgur.com/6dEXSyZ.png){#fig:}
+
+## Rotation
+
+```python
+import cv2
+import numpy as np
+
+img = cv2.imread('../../Assets/Images/lena.jpg', 1)
+
+cv2.imshow("src", img)
+imgInfo = img.shape
+
+height = imgInfo[0]
+width = imgInfo[1]
+
+matRotate = cv2.getRotationMatrix2D((height*0.5, width*0.5), 45, 0.5)
+
+dst = cv2.warpAffine(img, matRotate, (height, width))
+
+cv2.imshow('dst', dst)
+cv2.waitKey(0)
+```
+
+Result:
+
+![Image Rotation](https://i.imgur.com/nVOq3bL.png){#fig:}
+
+
+# Color Effect
+
+## RGB2Gray
+
+### Use imread
+
+```python
+import cv2
+img0 = cv2.imread('../../Assets/Images/flower-white.jpeg', 1)
+img1 = cv2.imread('../../Assets/Images/flower-white.jpeg', 0)
+print(img0.shape)
+print(img1.shape)
+cv2.imshow('src', img1)
+cv2.waitKey(0)
+```
+
+Result:
+
+```sh
+(238, 212, 3)
+(238, 212)
+```
+![ImreadRGB2Gray](https://i.imgur.com/g9rsRN0.png){#fig:}
+
+### Use cvtColor
+
+```python
+import cv2
+img = cv2.imread('../../Assets/Images/flower-white.jpeg', 1)
+print(img.shape)
+dst = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+cv2.imshow('dst', dst)
+cv2.waitKey(0)
+```
+### Pixel Convertion
+
+```python
+import cv2
+import numpy as np
+img = cv2.imread('../../Assets/Images/flower-white.jpeg', 1)
+imgInfo = img.shape
+height = imgInfo[0]
+width = imgInfo[1]
+dst = np.zeros((height, width, 3), np.uint8)
+for i in range(0, height):
+    for j in range(0, width):
+        (b, g, r) = img[i,j]
+        gray = int(b)*0.114 +int(g)*0.587 + int(r)*0.299
+        dst[i, j] = np.uint8(gray)
+cv2.imshow('dst', dst)
+cv2.waitKey(0)
+```
+
+Optimization:
+
+```python
+# 浮点转定点进行优化.  '>>' is  better than '+- */'
+b = int(b)
+g = int(g)
+r = int(r)
+#gray = (r*1 + g*2 + b*1)/4
+gray = (r+(g<<1)+b)>>2
+```
+
+## Color Invert
+### Gray Image
+
+```python
+import cv2
+import numpy as np
+img = cv2.imread('../../Assets/Images/flower-white.jpeg', 1)
+
+imgInfo = img.shape
+height = imgInfo[0]
+width = imgInfo[1]
+
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+dst = np.zeros((height, width, 1), np.uint8)
+
+for i in range(0, height):
+    for j in range(0, width):
+        grayPixel = gray[i, j]
+        dst[i, j] = 255 - grayPixel
+
+cv2.imshow('dst', dst)
+cv2.waitKey(0)
+```
+
+Result:
+
+![colorInvert](https://i.imgur.com/F3B4GzV.png){#fig:}
+
+### Color Image
+
+```python
+import cv2
+import numpy as np
+
+img = cv2.imread('../../Assets/Images/flower-white.jpeg', 1)
+
+imgInfo = img.shape
+height = imgInfo[0]
+width = imgInfo[1]
+
+dst = np.zeros((height, width, 3), np.uint8)
+
+for i in range(0, height):
+    for j in range(0, width):
+        (b, g, r) = img[i, j]
+        dst[i, j] = (255 - b, 255-g, 255-r)
+
+cv2.imshow('src', img)
+cv2.imshow('dst', dst)
+cv2.waitKey(0)
+```
+
+Result:
+
+![Color Image Invert](https://i.imgur.com/um9IYBT.png){#fig:}
+
+## Mosaic
+
+```python
+import cv2
+import numpy as np
+
+img = cv2.imread('../../Assets/Images/flower-white.jpeg', 1)
+
+imgInfo = img.shape
+height = imgInfo[0]
+width = imgInfo[1]
+
+
+for m in range(50, 200):
+    for n in range(50,100):
+        # pixel -> 10 * 10
+        if m%10 == 0 and n%10 ==0:
+            for i in range(0, 10):
+                for j in range(0,10):
+                    (b, g, r) = img[m, n]
+                    img[i+m, j+n] = (b, g, r)
+
+cv2.imshow('img', img)
+cv2.waitKey(0)
+```
+
+Result:
+
+![Mosaic](https://i.imgur.com/5tmoLx2.png){#fig:}
+
+## Frosted glass
+
+```python
+import cv2
+import numpy as np
+import random
+
+img = cv2.imread('../../Assets/Images/flower0.jpeg', 1)
+
+imgInfo = img.shape
+height = imgInfo[0]
+width = imgInfo[1]
+
+dst = np.zeros((height, width, 3), np.uint8)
+
+mm = 8
+
+for m in range(0, height - mm):
+    for n in range(0, width - mm):
+        index = int(random.random() * mm) # 0 - range
+        (b,g,r) = img[m+index, n+index]
+        dst[m, n] = (b, g, r)
+
+
+cv2.imshow('img', img)
+cv2.imshow('dst', dst)
+cv2.waitKey(0)
+```
+
+Result:
+
+![FrostedGlass](https://i.imgur.com/zPm2o5L.png){#fig:}
+
+
+## Image Fusion
+
+```python
+import cv2
+import numpy as np
+import random
+
+img0 = cv2.imread('../../Assets/Images/flower0.jpeg', 1)
+img1 = cv2.imread('../../Assets/Images/dog.jpeg', 1)
+
+imgInfo = img0.shape
+height = imgInfo[0]
+width = imgInfo[1]
+
+# ROI
+roiH = int(height-50)
+roiW = int(width-50)
+
+img0ROI = img0[0:roiH, 0:roiW]
+img1ROI = img1[0:roiH, 0:roiW]
+
+
+dst = np.zeros((roiH, roiW, 3), np.uint8)
+dst = cv2.addWeighted(img0ROI, 0.5, img1ROI, 0.5, 0)
+
+cv2.imshow('img0', img0)
+cv2.imshow('img1', img1)
+cv2.imshow('dst', dst)
+cv2.waitKey(0)
+```
+
+Result:
+
+![Image Fusion](https://i.imgur.com/CN4WpE6.png){#fig:}
+
+## Canny Edge Detection
+
+```python
+
+import cv2
+import numpy as np
+import random
+
+img = cv2.imread('../../Assets/Images/flower-white.jpeg', 1)
+
+imgInfo = img.shape
+height = imgInfo[0]
+width = imgInfo[1]
+
+cv2.imshow('img', img)
+
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+imgG = cv2.GaussianBlur(gray, (3, 3), 0)
+dst = cv2.Canny(img, 50, 50)
+
+cv2.imshow('dst', dst)
+cv2.waitKey(0)
+```
+
+Result:
+
+![Canny](https://i.imgur.com/6O98jEL.png){#fig:}
+
+## Sobel Edge Detection
+
+1. 算子模板
+
+Verticle:
+
+$$
+\begin{bmatrix}
+1 & 2 & 1 \\
+0 & 0 &  0 \\
+-1  & -2 & -1
+\end{bmatrix}
+$$
+
+Horizental:
+
+$$
+\begin{bmatrix}
+1 & 0 & -1  \\
+2 & 0 & -2  \\
+1 & 0 & -1
+\end{bmatrix}
+$$
+
+2. 图片卷积
+3. 计算梯度
+3. 域值判别
+
+```python
+
+import cv2
+import numpy as np
+import math
+import random
+
+img = cv2.imread('../../Assets/Images/flower-white.jpeg', 1)
+
+imgInfo = img.shape
+height = imgInfo[0]
+width = imgInfo[1]
+
+cv2.imshow('img', img)
+
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+dst = np.zeros((height, width, 1), np.uint8)
+
+for i in range(0, height-2):
+    for j in range(0, width-2):
+        gy = gray[i, j]*1 + gray[i, j+1]*2 + gray[i,j+2]*1 - gray[i+2, j]*1 - gray[i+2, j+1]*2 - gray[i+2, j+2]*1
+        gx = gray[i, j]*1 - gray[i, j+2]*1 + gray[i+1, j]*2 - gray[i+1, j+2]*2 + gray[i+2, j]*1 - gray[i+2, j+2]*1
+        grad = math.sqrt(gx*gx + gy*gy)
+        if grad > 50:
+            dst[i, j] = 255
+        else:
+            dst[i, j] = 0
+
+cv2.imshow('dst', dst)
+cv2.waitKey(0)
+```
+
+Result:
+
+![Sobel Edge Detection](https://i.imgur.com/V9qmvtQ.png){#fig:}
+
+## Embossing
+
+```python
+
+import cv2
+import numpy as np
+
+img = cv2.imread('../../Assets/Images/flower-white.jpeg', 1)
+
+imgInfo = img.shape
+height = imgInfo[0]
+width = imgInfo[1]
+
+cv2.imshow('img', img)
+
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+# newPixel = gray0(First pixel) - gray1 (next pixel) + 150
+
+dst = np.zeros((height, width, 1), np.uint8)
+
+for i in range(0, height):
+    for j in range(0, width-1):
+        grayP0 = int(gray[i, j])
+        grayP1 = int(gray[i, j+1])
+        newP = grayP0 - grayP1 + 150
+        if newP > 255:
+            newP = 255
+        if newP < 0:
+            newP = 0
+        dst[i, j] = newP
+
+
+cv2.imshow('dst', dst)
+cv2.waitKey(0)
+```
+
+Result:
+
+![Embossing](https://i.imgur.com/QEEuWC6.png){#fig:}
+
+## Color Style
+
+```python
+
+import cv2
+import numpy as np
+
+img = cv2.imread('../../Assets/Images/flower-white.jpeg', 1)
+
+imgInfo = img.shape
+height = imgInfo[0]
+width = imgInfo[1]
+
+cv2.imshow('img', img)
+
+dst = np.zeros((height, width, 3), np.uint8)
+
+for i in range(0, height):
+    for j in range(0, width):
+        (b, g, r) = img[i, j]
+        b = b * 1.5
+        g = g * 1.3
+        if b > 255:
+            b = 255
+        if g > 255:
+            g = 255
+        dst[i, j] = (b, g, r)
+
+cv2.imshow('dst', dst)
+cv2.waitKey(0)
+```
+
+Result:
+
+More blue than before:
+
+![ChangeColorStyle](https://i.imgur.com/z0rkcP0.png){#fig:}
+
+## Oil painting effect
+
+1. BGR to gray
+1. Segment 7*7 10*10
+2. Map: 0-255  <br>
+  0-63, 64-127, ... <br>
+Eg. 10 maps to 0-63
+1. count the number of pixels in each bucket
+2. dst = result (the average Value)
+
+
+```python
+import cv2
+import numpy as np
+
+img = cv2.imread('../../Assets/Images/dog.jpeg', 1)
+
+imgInfo = img.shape
+height = imgInfo[0]
+width = imgInfo[1]
+
+cv2.imshow('img', img)
+
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+dst = np.zeros((height, width, 3), np.uint8)
+for i in range(4, height-4):
+    for j in range(4, width-4):
+        array1 = np.zeros(8, np.uint8) # 8个灰度等级的像素个数
+        for m in range(-4, 4):
+            for n in range( -4, 4):
+                p1 = int(gray[i+m, j+n]/32)
+                array1[p1] = array1[p1]+1
+
+        #计算哪个段所含像素最多
+        currentMax = array1[0]
+        l = 0 #当前处于哪个块中
+        for k in range(0, 8):
+            if currentMax < array1[k]:
+                currentMax = array1[k]
+                l = k
+
+       #Here I added by my idea
+        count = 0
+        newB = 0
+        newG = 0
+        newR = 0
+        for m in range(-4, 4):
+            for n in range(-4, 4):
+                if gray[i+m, j+n] >= (l*32) and gray[i+m, j+n] <= ( (l+1)*32):
+                    (b, g, r) = img[i+m, j+n]
+                    newB = newB + b
+                    newG = newG + g
+                    newR = newR + r
+                    count = count + 1
+
+        dst[i, j] = ( int(newB/count), int(newG/count), int(newR/count))
+
+cv2.imshow('dst',dst)
+cv2.waitKey(0)
+
+```
+
+Result:
+
+![Oil Painting](https://i.imgur.com/dCtMzy7.png){#fig:}
+
+
+
+
 
 
 

@@ -28,7 +28,12 @@ title: Study Resources List
 - [apachecn/AiLearning](https://github.com/apachecn/AiLearning)
   [ApacheCN 中文开源组织](http://www.apachecn.org/)
 - [RedstoneWill/MachineLearningInAction](https://github.com/RedstoneWill/MachineLearningInAction)
-- 
+- [《动手学深度学习》](http://zh.gluon.ai/index.html) [d2l-ai/d2l-zh](https://github.com/d2l-ai/d2l-zh)
+- [MXNet_Gluon-Bilibili](https://space.bilibili.com/209599371?spm_id_from=333.788.b_765f7570696e666f.2)
+- [Lecture Collection | Convolutional Neural ](https://www.youtube.com/watch?v=vT1JzLTH4G4&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)
+- [servicesim](https://bitbucket.org/osrf/servicesim)
+- [OpenSourceRoboticsFoundation OSRF](https://bitbucket.org/osrf/)
+
 
 
 # Multiview Geometry & Computer Vision & Graphics
@@ -41,7 +46,7 @@ title: Study Resources List
 - [Yiyi's Blog](https://shd101wyy.github.io/)
     - AWA, game
     - Github blog
-
+- [Andy Zeng - Github Blog](http://andyzeng.github.io/)
 
 # Algorithm
 - [acm-hdu-listproblem](http://acm.hdu.edu.cn/listproblem.php?vol=1)
