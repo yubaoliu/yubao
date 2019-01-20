@@ -724,12 +724,112 @@ Result:
 
 ![Oil Painting](https://i.imgur.com/dCtMzy7.png){#fig:}
 
+# Graphics
+## Line Segment
+
+```python
+import cv2
+import numpy as np
+
+newImageInfo = (500, 500, 3)
+dst = np.zeros(newImageInfo, np.uint8)
+
+#line segment
+cv2.line(dst, (100, 100), (400, 400), (0, 0, 255))
+
+# line width
+cv2.line(dst, (100, 200), (400, 200), (0, 255, 255), 20)
+# line style
+cv2.line(dst, (100, 300), (400, 300), (0, 255, 0), 20, cv2.LINE_AA)
+# triangle
+cv2.line(dst, (200, 150), (50, 250), (25, 100, 255))
+cv2.line(dst, (50, 250), (400, 380), (25, 100, 255))
+cv2.line(dst, (400, 380), (200, 150), (25, 100, 255))
+
+cv2.imshow('dst', dst)
+cv2.waitKey(0)
+```
+
+Result:
+
+![line Segment](https://i.imgur.com/mfrJt8i.png){#fig:}
 
 
+## Rectangle, Circle, Ellipse
 
+```python
+import cv2
+import numpy as np
+
+newImageInfo = (500, 500, 3)
+dst = np.zeros(newImageInfo, np.uint8)
+
+cv2.rectangle(dst, (50, 100), (200, 300), (255, 0, 0), -1) #-1: fill; >0: line width
+cv2.circle(dst, (250,250), (50), (0, 255, 0), 2)
+cv2.ellipse(dst, (256, 256), (150, 100), 0, 0, 180, (255, 255, 0), -1)
+
+points = np.array([ [150, 50], [140, 140], [200, 170], [250, 250], [150, 50]], np.int32)
+print("shape", points.shape)
+print(points)
+
+points = points.reshape((-1, 1, 2))
+print("inverse: ", points.shape)
+print(points)
+
+cv2.polylines(dst, [points], True, (0, 255, 255))
+
+cv2.imshow('dst', dst)
+cv2.waitKey(0)
+```
+
+Results:
+
+![RecCirEllipse](https://i.imgur.com/HcH3OOR.png){#fig:}
+
+## Draw Texts on Images
+
+```python
+import cv2
+
+img = cv2.imread('../../Assets/Images/flower0.jpeg', 1)
+font = cv2.FONT_HERSHEY_SIMPLEX
+cv2.rectangle(img, (50, 20),(250, 170), (0, 255, 0), 3)
+cv2.putText(img, 'this is flower', (10, 100), font, 1, (200, 100, 255), 2, cv2.LINE_AA)
+
+cv2.imshow('src',img)
+cv2.waitKey(0)
+```
+Result:
+
+![Draw Text on Image](https://i.imgur.com/EMDNWTr.png){#fig:}
+
+## Draw Image
+
+```python
+import cv2
+
+img = cv2.imread('../../Assets/Images/flower0.jpeg', 1)
+height = int(img.shape[0]*0.2)
+width = int(img.shape[1]*0.2)
+imgResize = cv2.resize(img, (width, height))
+for i in range(0, height):
+    for j in range(0, width):
+        img[i+20, j+50] = imgResize[i, j]
+
+cv2.imshow('src',img)
+cv2.waitKey(0)
+```
+
+Result:
+
+![Draw Image](https://i.imgur.com/1jyEBPR.png){#fig:}
 
 
 
 # Reference
 - [人工智能——机器视觉及图像识别](https://www.bilibili.com/video/av33208345/?p=1)
 - [SoureCode-Github-me](https://github.com/yubaoliu/AI.git)
+
+
+[^ImageHistogramWiki]: https://en.wikipedia.org/wiki/Line_segment
+[^image-histogram-characteristics]: https://www.allaboutcircuits.com/technical-articles/image-histogram-characteristics-machine-learning-image-processing/
