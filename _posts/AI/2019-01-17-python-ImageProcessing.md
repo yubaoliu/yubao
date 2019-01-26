@@ -829,7 +829,3 @@ Result:
 # Reference
 - [人工智能——机器视觉及图像识别](https://www.bilibili.com/video/av33208345/?p=1)
 - [SoureCode-Github-me](https://github.com/yubaoliu/AI.git)
-
-
-[^ImageHistogramWiki]: https://en.wikipedia.org/wiki/Line_segment
-[^image-histogram-characteristics]: https://www.allaboutcircuits.com/technical-articles/image-histogram-characteristics-machine-learning-image-processing/
